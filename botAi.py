@@ -22,18 +22,22 @@ urlCanal = "https://m.youtube.com/user/Paradoxo10/videos"
 
 urlCanal = "https://m.youtube.com/channel/UCajKESR0MIWvN5qcPEAleBw/videos"
 
-video = buscaUltimoVideo(urlCanal)
-print(f"\n\n\n\nÚltimo vídeo: {video}")
+videoAtual = buscaUltimoVideo(urlCanal)
+ultimoVideo = videoAtual
+print(f"\n\n\n\nÚltimo vídeo: {ultimoVideo}")
 
 
-while(video==video):
-	video = buscaUltimoVideo(urlCanal)
-	print("\nNenhum vídeo novo:\n")
-	print(video)
+i=1
+while(ultimoVideo==videoAtual):
+	videoAtual = buscaUltimoVideo(urlCanal)
+	print("\nNenhum vídeo novo:")
+	print(videoAtual)
+	print(f"Tentativa: {i}")
+	i+=1
 	
 	
-print(f"\nVídeo novo!!!\n{video}")
-thumb = obterThumb(video)
-mensagem = (f"Oi, aqui é o BotAí. Vídeo novo no ar! \nhttps://youtu.be/{video}")
+print(f"\nVídeo novo!!!\n{videoAtual}")
+thumb = obterThumb(videoAtual)
+mensagem = (f"Oi, aqui é o BotAí. Vídeo novo no ar! \nhttps://youtu.be/{videoAtual}")
 
 tuita.tweet_imagem(thumb,mensagem)
