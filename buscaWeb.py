@@ -26,7 +26,6 @@ class BuscaWeb(object):
         retorno = retorno.decode("unicode-escape")
         # Os passo de "encode" e "decode" acima garatem que caracteres acentuados possam ser reconhecidos
 
-        req.clenaup()
         return retorno.replace("\n", " ")  # Retirada das quebras de linha (opcional)
 
     def buscaAscii(self, url):  # Faz uma busca com a URL (link) e devolve o código HTML da página
